@@ -143,7 +143,7 @@
     "node-cache": "^5.1.2",
     "node-cron": "^3.0.2",
     "object-sizeof": "^1.6.3",
-    "passport": "^0.6.0",
+    "passport": "^0.7.0",
     "passport-jwt": "^4.0.0",
     "password-generator": "^2.3.2",
     "pdfkit": "^0.13.0",
