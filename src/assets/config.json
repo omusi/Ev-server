@@ -1,0 +1,178 @@
+{
+  "EVDatabase": {
+    "url": "",
+    "key": ""
+  },
+  "Crypto": {
+    "key": "",
+    "algorithm": ""
+  },
+  "CentralSystems": [
+    {
+      "type": "ocpp",
+      "implementation": "soap",
+      "protocol": "http",
+      "host": "localhost",
+      "port": 8000,
+      "debug": false
+    },
+    {
+      "type": "ocpp",
+      "implementation": "json",
+      "protocol": "ws",
+      "host": "localhost",
+      "port": 8010,
+      "keepaliveinterval": 30,
+      "debug": false
+    }
+  ],
+  "CentralSystemRestService": {
+    "protocol": "http",
+    "host": "localhost",
+    "port": 80,
+    "userTokenKey": "3a413f137183abf22a392441e423c6092cbf5e1927c5afc6d4059c290bf77176c0e7496d3ce7c3e4112479c1376a88761088cbcf3a9e12a9ad344cae531b3db6",
+    "userTokenLifetimeHours": 12,
+    "userDemoTokenLifetimeDays": 365,
+    "userTechnicalTokenLifetimeDays": 365,
+    "passwordWrongNumberOfTrial": 3,
+    "passwordBlockedWaitTimeMin": 5,
+    "captchaSecretKey": "6LfaaA8qAAAAAPlNuOXMSNOhuD0w5cf7VmzoH3dk",
+    "captchaScore": 0.25,
+    "debug": false
+  },
+  "CentralSystemFrontEnd": {
+    "protocol": "http",
+    "host": "localhost",
+    "port": 80
+  },
+  "OCPIService": {
+    "protocol": "http",
+    "host": "localhost",
+    "port": 9090,
+    "debug": false
+  },
+  "OICPService": {
+    "protocol": "http",
+    "host": "localhost",
+    "port": 9080,
+    "debug": false
+  },
+  "CentralSystemServer": {
+    "protocol": "http",
+    "host": "localhost",
+    "port": 80
+  },
+  "ODataService": {
+    "protocol": "http",
+    "host": "localhost",
+    "port": 9292,
+    "debug": false
+  },
+  "WSDLEndpoint": {
+    "baseSecureUrl": ""
+  },
+  "JsonEndpoint": {
+    "baseSecureUrl": ""
+  },
+  "OCPIEndpoint": {
+    "baseUrl": ""
+  },
+  "AsyncTask": {
+    "active": true,
+    "nbrTasksInParallel": 4
+  },
+  "Storage": {
+    "implementation": "mongodb",
+    "uri": "mongodb://evse-user:password@ec2-174-129-46-60.compute-1.amazonaws.com:27017/?directConnection=true&authSource=evse",
+    "host": "ec2-174-129-46-60.compute-1.amazonaws.com",
+    "port": 27017,
+    "user": "evse-user",
+    "password": "password",
+    "database": "evse"
+  },
+  "Notification": {
+    "Email": {
+      "enabled": true
+    },
+    "RemotePushNotification": {
+      "enabled": false
+    }
+  },
+  "Firebase": {
+    "type": "",
+    "projectID": "",
+    "privateKeyID": "",
+    "privateKey": "",
+    "clientEmail": "",
+    "clientID": "",
+    "authURI": "",
+    "tokenURI": "",
+    "authProviderX509CertURL": "",
+    "clientX509CertURL": ""
+  },
+  "Axios": {
+    "retries": 0,
+    "timeoutSecs": 30
+  },
+  "Email": {
+    "smtp": {
+      "from": "evuser68@gmail.com",
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "requireTLS": true,
+      "type": "login",
+      "user": "evuser68@gmail.com",
+      "password": "vdq-zxa2fgw.DPU.ect",
+      "debug": true
+    }
+  },
+  "Authorization": {
+    "debug": true
+  },
+  "ChargingStation": {
+    "heartbeatIntervalOCPPSSecs": 60,
+    "heartbeatIntervalOCPPJSecs": 3600,
+    "pingIntervalOCPPJSecs": 60,
+    "monitoringIntervalOCPPJSecs": 600,
+    "notifBeforeEndOfChargeEnabled": true,
+    "notifBeforeEndOfChargePercent": 85,
+    "notifEndOfChargeEnabled": true,
+    "notifStopTransactionAndUnlockConnector": false,
+    "maxLastSeenIntervalSecs": 540
+  },
+  "Migration": {
+    "active": true
+  },
+  "Scheduler": {
+    "active": false,
+    "tasks": [
+      {
+        "name": "OICPPushEVSEDataTask",
+        "active": false,
+        "periodicity": "*/10 * * * *",
+        "config": {
+          "partial": false
+        }
+      },
+      {
+        "name": "OICPPushEvseStatusTask",
+        "active": false,
+        "periodicity": "*/5 * * * *",
+        "config": {
+          "partial": false
+        }
+      }
+    ]
+  },
+  "Trace": {
+    "traceIngressHttp": false,
+    "traceEgressHttp": false,
+    "traceOcpp": false,
+    "traceDatabase": false,
+    "traceNotification": false
+  },
+  "Logging": {
+    "logLevel": "D"
+  }
+}
